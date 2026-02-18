@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <title>Matriz</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1>Ejemplo de mi Matriz</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduzca los valores: </h2>
+            <input type="number" id="numero1">
+            <input type="number" id="numero2">
+            <button id="btnValidar">Validar</button>
+        </section>
+        <section>
+            <p id="txtAlerta"></p>
+            <div id="colorMatriz">
+                <p id="matriz"></p>
+            </div>
+            <section>
+                <h2>Opciones de Matriz</h2>
+                <input type="checkbox" id="matrizPares">Matriz Pares 
+                <input type="checkbox" id="matrizImpares">Matriz Impares
+                <input type="checkbox" id="matrizPrimos">Matriz Primos
+                <p id="matrizPIP"></p>
+            </section>
+        </section>
+    </main>
+    <script src="matriz.js"></script>
 </body>
+
 </html>
