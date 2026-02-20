@@ -4,6 +4,7 @@ let restaMatiz = document.getElementById("matrizPares");
 let multMatriz = document.getElementById("matrizImpares");
 let transMatriz = document.getElementById("matrizPrimos");
 let alerta = document.getElementById("txtAlerta");
+let btnResetear = document.getElementById("btnResetear");
 
 let matrizAA = document.getElementById("matriz");
 let matrizBB = document.getElementById("matriz1");
@@ -14,7 +15,7 @@ btnValidar.addEventListener("click", function btnValidar() {
     num1 = parseFloat(document.getElementById("numero1").value);
     num2 = parseFloat(document.getElementById("numero2").value);
     if (num1 == Math.abs(Math.trunc(num1)) && num2 == Math.abs(Math.trunc(num2))) {
-        if (num1 == num2) {
+        if (num1 == num2) {     
             let matrizPrueba = [];
             for (let index = 0; index < num1; index++) {
                 matrizPrueba[index] = [];
@@ -100,8 +101,41 @@ multMatriz.addEventListener("change", function multMatriz() {
     verResultado(matrizResultado);
 });
 transMatriz.addEventListener("change", function transMatriz() {
-
+    let matrizA = [];
+    let matrizResultado = [];
+    for (let index = 0; index < num1; index++) {
+        matrizA[index] = [];
+        matrizResultado[index] = [];
+        for (let index2 = 0; index2 < num2; index2++) {
+            matrizA[index][index2] = Math.trunc(Math.random() * 11) + 1;
+            matrizResultado[index][index2] = 1;
+        }
+    }
+    for (let index = 0; index < num1; index++) {//filas
+        for (let index2 = 0; index2 < num2; index2++) {//columnas
+            matrizResultado[index2][index]=matrizA[index][index2];
+            console.log(index2+ " index2");
+        }
+        console.log(index+ "index");
+    }
+    verMatrizA(matrizA);
+    verResultado(matrizResultado);
 });
+btnResetear.addEventListener("click", function () {
+    document.getElementById("numero1").value = "";
+    document.getElementById("numero2").value = "";
+    matrizAA.innerText = "";
+    matrizBB.innerText = "";
+    resultadoMatriz.innerText = "";
+    alerta.textContent = "";
+    sumaMatriz.checked = false;
+    restaMatiz.checked = false;
+    multMatriz.checked = false;
+    transMatriz.checked = false;
+    num1 = undefined;
+    num2 = undefined;
+});
+
 function verMatrizA(matrizA) {
     let mostrarMatriz = "";
     for (let index = 0; index < matrizA.length; index++) {
