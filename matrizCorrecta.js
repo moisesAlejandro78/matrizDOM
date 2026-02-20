@@ -10,7 +10,7 @@ btnValidar.addEventListener("click", function validar() {
     let matrizUnitaria = document.getElementById("matrizUnitaria");
     let matrizPares = document.getElementById("matrizPares");
     let matrizPrimos = document.getElementById("matrizPrimos");
-    let matrizImpares=document.getElementById("matrizImpares");
+    let matrizImpares = document.getElementById("matrizImpares");
     let matriz = [];
     if (num1 == Math.abs(Math.trunc(num1)) && num2 == Math.abs(Math.trunc(num2))) {
         if (num1 == num2) {
@@ -56,16 +56,16 @@ btnValidar.addEventListener("click", function validar() {
                 verMatriz(matrizPares);
             });//matrizPares
             matrizImpares.addEventListener("change", function matrizImpares() {
-                let matrizImpares=[], sumaImpares;
+                let matrizImpares = [], sumaImpares;
                 for (let index = 0; index < num1; index++) {
-                    matrizImpares[index]=[];
+                    matrizImpares[index] = [];
                     for (let index2 = 0; index2 < num2; index2++) {
-                        sumaImpares=index+index2;
-                        if (sumaImpares%2===0) {
-                            matrizImpares[index][index2]=0
+                        sumaImpares = index + index2;
+                        if (sumaImpares % 2 === 0) {
+                            matrizImpares[index][index2] = 0
                         }
-                        else{
-                            matrizImpares[index][index2]=Math.trunc(Math.random()*10)+1;
+                        else {
+                            matrizImpares[index][index2] = Math.trunc(Math.random() * 10) + 1;
                         }
                     }
                 }
@@ -88,8 +88,8 @@ btnValidar.addEventListener("click", function validar() {
                                 if (contador === 2) {
                                     matrizPrimos[index][index2] = Math.trunc(Math.random() * 10) + 1;
                                 }
-                                else{
-                                    matrizPrimos[index][index2]=0;
+                                else {
+                                    matrizPrimos[index][index2] = 0;
                                 }
                             }
                             aumento++;
@@ -123,3 +123,15 @@ function verMatriz(matriz) {
     parrafoMatriz.innerText = mostrarMatriz;
     //matrizPIP.innerText=mostrarMatriz;
 }//con esto muestro la matriz
+btnReset.addEventListener("click", function resetear() {
+    document.getElementById("numero1").value = "";
+    document.getElementById("numero2").value = "";
+    num1 = 0;
+    num2 = 0;
+    parrafoMatriz.innerText = "";
+    alerta.textContent = "";
+    matrizUnitaria.checked = false;
+    matrizPares.checked = false;
+    matrizImpares.checked = false;
+    matrizPrimos = false;
+});
