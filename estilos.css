@@ -1,3 +1,132 @@
-#colorMatriz{
-    background: yellow;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 500px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    position: absolute;
+    top: 30px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #2a5298;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 2px solid #2a5298;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #1e3c72;
+    transform: scale(1.05);
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#btnValidar {
+    background-color: #2a5298;
+    color: white;
+}
+
+#btnValidar:hover {
+    background-color: #1e3c72;
+    transform: scale(1.05);
+}
+
+#btnResetear {
+    background-color: crimson;
+    color: white;
+}
+
+#btnResetear:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+#colorMatriz {
+    background: yellow; 
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 80px;
+    font-family: monospace;
+    white-space: pre;
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.1);
+}
+
+#txtAlerta {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+section section {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+main:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+.opcionesMatriz {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opcionesMatriz label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 500;
 }
